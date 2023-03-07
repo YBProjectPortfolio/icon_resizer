@@ -1,0 +1,376 @@
+:root {
+  background-color: rgb(3, 0, 25);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+
+  #creditPage {
+    margin: 0.3em 0.3em;
+    display: flex;
+    justify-content: right;
+
+    #credits {
+      padding: 0.2em;
+      color: white;
+      text-decoration: none;
+      transition-duration: 150ms;
+      border: solid blue 3px;
+      border-radius: 0.5em;
+
+      &:hover {
+        border: solid orangered 3px;
+        border-radius: 0.5em;
+      }
+    }
+  }
+
+  #fileInput {
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input[type='file']::file-selector-button {
+      padding: 1em;
+      color: white;
+      border: none;
+      width: 50%;
+      transition-duration: 150ms;
+      background-color: blue;
+      border-radius: 0em 10em 10em 0em;
+
+      &:hover {
+        background-color: rgb(0, 38, 65);
+      }
+    }
+
+    #convert {
+      width: 10%;
+      background-color: blue;
+      color: white;
+      border-radius: 10em 0em 00em 10em;
+      padding: 0.8em;
+      transition-duration: 150ms;
+      cursor: default;
+      font-weight: 500;
+
+      &:hover {
+        background-color: rgb(0, 38, 65);
+        outline: solid blue 3px;
+      }
+    }
+  }
+
+  #inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #extensionSelect {
+      color: white;
+      padding: 1em;
+      outline: none;
+      border: none;
+      margin: 0 0.5em;
+      background-color: rgb(0, 38, 65);
+      border-radius: 1em;
+      transition-duration: 150ms;
+
+      &:hover {
+        background-color: rgb(0, 0, 0);
+        outline: solid blue 3px;
+      }
+
+      &:focus {
+        background-color: rgb(0, 0, 0);
+        outline: solid rgb(0, 255, 81) 3px;
+      }
+    }
+
+    label {
+      color: rgb(176, 176, 176);
+    }
+
+    input {
+      color: white;
+      padding: 1em;
+      outline: none;
+      border: none;
+      margin: 0 0.5em;
+      background-color: rgb(0, 38, 65);
+      border-radius: 1em;
+      transition-duration: 150ms;
+
+      &:hover {
+        background-color: rgb(0, 0, 0);
+        outline: solid blue 3px;
+      }
+
+      &:focus {
+        background-color: rgb(0, 0, 0);
+        outline: solid rgb(0, 255, 81) 3px;
+      }
+    }
+
+    #Add {
+      padding: 1em 2em;
+      font-weight: bold;
+      transition-duration: 150ms;
+
+      &:hover {
+        background-color: rgb(0, 89, 149);
+        outline: solid blue 4px;
+      }
+    }
+  }
+
+  #imageDataContainer {
+    margin-top: 1em;
+    padding: 0.1em 10em;
+
+    #DataHolder {
+      border: solid rgb(134, 134, 134) 3px;
+      color: white;
+      border-radius: 0.5em;
+      display: grid;
+      grid-template-columns: 25% 15% 50% 10%;
+      justify-content: space-between;
+
+      div {
+        display: grid;
+        grid-template-columns: 35% 65%;
+        text-align: center;
+
+        label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgb(0, 38, 65);
+          color: rgb(176, 176, 176);
+        }
+
+        span {
+          font-weight: bolder;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      #delete {
+        background: rgb(0, 38, 65);
+        color: white;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1em;
+        font-weight: bold;
+        transition-duration: 150ms;
+        cursor: default;
+
+        &:hover {
+          background-color: rgb(0, 38, 65);
+          outline: solid blue 4px;
+        }
+      }
+    }
+  }
+
+  #nothing {
+    color: white;
+    text-align: center;
+    margin-top: 20%;
+  }
+
+  #clear {
+    color: white;
+    padding: 0.3em 0.4em;
+    margin: 0 0.5em;
+    background-color: rgb(0, 38, 65);
+    border-radius: 0.5em;
+    transition-duration: 150ms;
+    cursor: default;
+    width: 3%;
+    text-align: center;
+
+    &:hover {
+      background-color: rgb(149, 65, 0);
+      outline: solid rgb(255, 0, 0) 4px;
+    }
+  }
+
+  #header {
+    color: white;
+    cursor: default;
+    margin-top: 0;
+    padding: 0.5em;
+  }
+
+  #dirPath {
+    display: flex;
+    justify-content: center;
+    color: rgb(251, 255, 0);
+    background-color: blue;
+    margin: 0 20%;
+    padding: 0.2em;
+    transition-duration: 150ms;
+  }
+}
+
+@media (max-width: 1000px) {
+  .App {
+
+    #inputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      #extensionSelect {
+        color: white;
+        padding: 1em;
+        outline: none;
+        border: none;
+        margin: 0.5em 0.5em;
+        background-color: rgb(0, 38, 65);
+        border-radius: 1em;
+        transition-duration: 150ms;
+
+        &:hover {
+          background-color: rgb(0, 0, 0);
+          outline: solid blue 3px;
+        }
+
+        &:focus {
+          background-color: rgb(0, 0, 0);
+          outline: solid rgb(0, 255, 81) 3px;
+        }
+      }
+
+      label {
+        color: rgb(176, 176, 176);
+      }
+
+      input {
+        color: white;
+        padding: 1em;
+        outline: none;
+        border: none;
+        margin: 0 0.5em;
+        background-color: rgb(0, 38, 65);
+        border-radius: 1em;
+        transition-duration: 150ms;
+
+        &:hover {
+          background-color: rgb(0, 0, 0);
+          outline: solid blue 3px;
+        }
+
+        &:focus {
+          background-color: rgb(0, 0, 0);
+          outline: solid rgb(0, 255, 81) 3px;
+        }
+      }
+
+      #Add {
+        padding: 1em 2em;
+        font-weight: bold;
+        transition-duration: 150ms;
+
+        &:hover {
+          background-color: rgb(0, 89, 149);
+          outline: solid blue 4px;
+        }
+      }
+    }
+  }
+
+  .clear {
+    font-weight: 100;
+    padding: 2em;
+    font-size: small;
+  }
+}
+
+@media (max-width: 800px) {
+  .App {
+    .clear {
+      font-weight: 100;
+      font-size: x-small;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .App {
+    .clear {
+      font-weight: 100;
+      font-size: xx-small;
+    }
+
+    #imageDataContainer {
+      #DataHolder {
+        display: flex;
+
+        div {
+          display: flex;
+          justify-content: space-between;
+
+          label {
+            font-size: x-small;
+            padding: 0.1em;
+          }
+
+          span {
+            font-size: x-small;
+            padding: 1em;
+          }
+        }
+
+        #delete {
+          border-radius: 1em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .App {
+    .clear {
+      font-weight: 100;
+      font-size: xx-small;
+    }
+
+    #imageDataContainer {
+      #DataHolder {
+        display: flex;
+
+        div {
+          display: flex;
+          justify-content: space-between;
+
+          label {
+            font-size: x-small;
+            padding: 0.1em;
+          }
+
+          span {
+            font-size: x-small;
+            padding: 1em;
+          }
+        }
+      }
+    }
+  }
+}
